@@ -21,22 +21,22 @@ public class HeloController {
     *
     * @fn 		public ModelAndView index(ModelAndView mav) 
     * 
-    * @brief 	저장된 정보를 볼 수 있는 페이지
+    * @brief 	���옣�맂 �젙蹂대�� 蹂� �닔 �엳�뒗 �럹�씠吏�
     *
-    * @author 	최지은
+    * @author 	理쒖���
     * @date 	2019-10-09
     *
     * @param 	RequestMapping ModelAndView mav
     *
-    * @remark   index페이지를 불러옴
-    * 			저장되어 있는 값을 모두 불러옴
+    * @remark   index�럹�씠吏�瑜� 遺덈윭�샂
+    * 			���옣�릺�뼱 �엳�뒗 媛믪쓣 紐⑤몢 遺덈윭�샂
     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(ModelAndView mav) 
     {
         mav.setViewName("index");
         mav.addObject("title","Find Page");
-        mav.addObject("msg","MyDataMongo의 예제입니다.");
+        mav.addObject("msg","MyDataMongo�쓽 �삁�젣�엯�땲�떎.");
         Iterable<MyDataMongo> list = repository.findAll();
         mav.addObject("datalist", list);
         return mav;
@@ -46,15 +46,15 @@ public class HeloController {
     *
     * @fn 		public ModelAndView insert(ModelAndView mav) 
     * 
-    * @brief 	정보를 입력하는 페이지
+    * @brief 	�젙蹂대�� �엯�젰�븯�뒗 �럹�씠吏�
     *
-    * @author 	최지은
+    * @author 	理쒖���
     * @date 	2019-10-09
     *
     * @param 	RequestMapping ModelAndView mav
     *
-    * @remark   insert페이지를 불러옴
-    * 			name,mail,tel값들을 DB에 저장
+    * @remark   insert�럹�씠吏�瑜� 遺덈윭�샂
+    * 			name,mail,tel媛믩뱾�쓣 DB�뿉 ���옣
     */
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public ModelAndView insert(ModelAndView mav) 
@@ -83,14 +83,12 @@ public class HeloController {
 	 *
 	 * @fn 		public ModelAndView detail(ModelAndView mav)
 	 * 
-	 * @brief 	�긽�꽭 議고쉶 �럹�씠吏�
+	 * @brief 	데이터 1건조회
 	 *
-	 * @author 	沅뚯뿰以�
-	 * @date 	2019-06-20
+	 * @author 	권연준	
+	 * @date 	2019-10-24
 	 *
 	 * @param 	mav ModelAndView
-	 *
-	 * @remark	findBy 瑜� �씠�슜�븳 議곌굔寃��깋 �썑 異쒕젰	[2019-06-20; 沅뚯뿰以�] \n
 	 *
 	 */
 	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
