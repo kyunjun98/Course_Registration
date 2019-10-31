@@ -17,19 +17,17 @@
 	</style>
 </head>
 <body>
-	<h1 th:text="${title}">update page</h1>
+	<h1 th:text="${title}">insert page</h1>
 	<p th:text="${msg}"></p>
-	<form action="/update/{id}" method="post">
+	<form action="/insert" method="post">
 	<table>
-	  <tr><td><label for="area">지역</label></td>
-	        <td><input type="text" name="area" /></td></tr>
-	  <tr><td><label for="name">지점명</label></td>
+	  <tr><td><label for="name">이름</label></td>
 	        <td><input type="text" name="name" /></td></tr>
-	  <tr><td><label for="address">주소</label></td>
-	        <td><input type="text" name="address" /></td></tr>
+	  <tr><td><label for="mail">이메일</label></td>
+	        <td><input type="text" name="mail" /></td></tr>	        
 	  <tr><td><label for="tel">전화번호</label></td>
 	        <td><input type="text" name="tel" /></td></tr>          
-	  <tr><td></td><td><input type="button" name="back" value="취소" onclick="location.href='/edit/{id}'"/><input type="submit" value="수정"/></td></tr>
+	  <tr><td></td><td><input type="button" name="back" value="취소" onclick="location.href='/'"/><input type="submit" value="저장"/></td></tr>
 	</table>
 	</form>
 </body>
