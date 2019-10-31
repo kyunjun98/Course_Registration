@@ -79,5 +79,27 @@ public class HeloController {
 	    
     }
 
+	/**
+	 *
+	 * @fn 		public ModelAndView detail(ModelAndView mav)
+	 * 
+	 * @brief 	�긽�꽭 議고쉶 �럹�씠吏�
+	 *
+	 * @author 	沅뚯뿰以�
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	findBy 瑜� �씠�슜�븳 議곌굔寃��깋 �썑 異쒕젰	[2019-06-20; 沅뚯뿰以�] \n
+	 *
+	 */
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
+		mav.setViewName("detail");
+
+		List<MyDataMongo> list = repository.findById(id);
+		mav.addObject("datalist", list);
+		return mav;
+	}
 
 }
